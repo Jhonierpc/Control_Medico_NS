@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj": {}
+    "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj": {}
   },
   "projects": {
-    "C:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj": {
+    "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj",
+        "projectUniqueName": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj",
         "projectName": "Control_Medico_NS",
-        "projectPath": "C:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj",
+        "projectPath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Control_Medico_NS.csproj",
         "packagesPath": "C:\\Users\\jhonier.riascos\\.nuget\\packages\\",
-        "outputPath": "C:\\Desarrollo\\GitHub\\Control_Medico_NS\\obj\\",
+        "outputPath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

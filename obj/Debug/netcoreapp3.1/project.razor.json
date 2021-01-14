@@ -14402,6 +14402,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Especialidad\\Index.cshtml",
+      "TargetPath": "Views\\Especialidad\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
