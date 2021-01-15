@@ -1,50 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Especialidades</title>
-</head>
-<body>
+@model IEnumerable<Control_Medico_NS.Models.Especialidad>
+
     <table>
         <thead>
             <tr>
-                <th>Descripción</th>
+                <th>
+                    @Html.DisplayNameFor(Model => Model.PubStrDescripcion)
+                </th>
             </tr>
         </thead>
         <tbody>
             @*Códigos para mostrar los registros de la BD*@
-            <tr>
-                <td>Anestesiología</td>
-            </tr>
-            <tr>
-                <td>Cardiología</td>
-            </tr>
-            <tr>
-                <td>Cirugía General</td>
-            </tr>
-            <tr>
-                <td>Cirugía Plástica</td>
-            </tr>
-            <tr>
-                <td>Dermatología</td>
-            </tr>
-            <tr>
-                <td>Gastroenterología</td>
-            </tr>
-            <tr>
-                <td>Ginecología</td>
-            </tr>
-            <tr>
-                <td>Hematología</td>
-            </tr>
-            <tr>
-                <td>Medicina General</td>
-            </tr>
-            <tr>
-                <td>Pediatría</td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(ModelItem => item.PubStrDescripcion)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PubIntIdEspecialidad">Editar</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
-</body>
-</html>l
+    
