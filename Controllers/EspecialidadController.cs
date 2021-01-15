@@ -17,14 +17,14 @@ namespace Control_Medico_NS.Controllers
             return View(_context.Especialidad.ToList());
         }
 
-        public IActionResult Edit (int? vIntId)
+        public IActionResult Edit (int? id)
         {
-            if (vIntId == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var especialidad = _context.Especialidad.Find(vIntId);
+            var especialidad = _context.Especialidad.Find(id);
 
             if (especialidad == null)
             {
@@ -34,11 +34,10 @@ namespace Control_Medico_NS.Controllers
             return View(especialidad);
         }
 
-        //Metodo editar encargado del proceso POST al formulario BD
-        [HttpPost]
-        public IActionResult Edit (int vIntId, [Bind("PubIntIdEspecialidad,PubStrDescripcion")] Especialidad especialidad)
+        [HttpPost] //Metodo editar encargado del proceso POST al formulario BD
+        public IActionResult Edit (int id, [Bind("PubIntIdEspecialidad,PubStrDescripcion")] Especialidad especialidad)
         {
-            if (vIntId != especialidad.PubIntIdEspecialidad)
+            if (id != especialidad.PubIntIdEspecialidad)
             {
                 return NotFound();
             }
