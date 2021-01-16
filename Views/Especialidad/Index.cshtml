@@ -1,10 +1,15 @@
 @model IEnumerable<Control_Medico_NS.Models.Especialidad>
 
+    <p>
+        <a asp-action="Create">Nuevo</a>
+    </p>
+
     <table>
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(Model => Model.PubStrDescripcion)
+                    @*@Html.DisplayNameFor(Model => Model.PubStrDescripcion)*@
+                    @Html.DisplayName("Descripción")
                 </th>
             </tr>
         </thead>

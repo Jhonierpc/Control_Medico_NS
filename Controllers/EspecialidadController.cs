@@ -79,5 +79,22 @@ namespace Control_Medico_NS.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("PubIntIdEspecialidad,PubStrDescripcion")] Especialidad especialidad)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Add(especialidad);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View();
+        }
     }
 }

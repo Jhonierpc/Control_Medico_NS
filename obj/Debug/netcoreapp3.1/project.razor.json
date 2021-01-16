@@ -14402,6 +14402,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Especialidad\\Create.cshtml",
+      "TargetPath": "Views\\Especialidad\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
