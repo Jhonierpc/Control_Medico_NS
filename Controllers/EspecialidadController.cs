@@ -1,6 +1,8 @@
 using System.Linq;
+using System.Threading.Tasks;
 using Control_Medico_NS.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Control_Medico_NS.Controllers
 {
@@ -12,19 +14,19 @@ namespace Control_Medico_NS.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_context.Especialidad.ToList());
+            return View(await _context.Especialidad.ToListAsync());
         }
 
-        public IActionResult Edit (int? id)
+        public async Task<IActionResult> Edit (int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var especialidad = _context.Especialidad.Find(id);
+            var especialidad = await _context.Especialidad.FindAsync(id);
 
             if (especialidad == null)
             {
@@ -35,7 +37,7 @@ namespace Control_Medico_NS.Controllers
         }
 
         [HttpPost] //Metodo editar encargado del proceso POST al formulario BD
-        public IActionResult Edit (int id, [Bind("PubIntIdEspecialidad,PubStrDescripcion")] Especialidad especialidad)
+        public async Task<IActionResult> Edit (int id, [Bind("PubIntIdEspecialidad,PubStrDescripcion")] Especialidad especialidad)
         {
             if (id != especialidad.PubIntIdEspecialidad)
             {
@@ -45,21 +47,21 @@ namespace Control_Medico_NS.Controllers
             if (ModelState.IsValid)
             {
                 _context.Update(especialidad);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
 
             return View(especialidad);
         }
 
-        public IActionResult Delete (int? id)
+        public async Task<IActionResult> Delete (int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var especialidad = _context.Especialidad.FirstOrDefault(e => e.PubIntIdEspecialidad == id);
+            var especialidad = await _context.Especialidad.FirstOrDefaultAsync(e => e.PubIntIdEspecialidad == id);
 
             if (especialidad == null)
             {
@@ -70,11 +72,11 @@ namespace Control_Medico_NS.Controllers
         }
 
         [HttpPost] //Metodo Eliminar encargado del proceso POST al formulario BD
-        public IActionResult Delete (int id)
+        public async Task<IActionResult> Delete (int id)
         {
-            var especialidad = _context.Especialidad.Find(id);
+            var especialidad = await _context.Especialidad.FindAsync(id);
             _context.Especialidad.Remove(especialidad);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
     }
