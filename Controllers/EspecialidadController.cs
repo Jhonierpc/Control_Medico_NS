@@ -51,5 +51,31 @@ namespace Control_Medico_NS.Controllers
 
             return View(especialidad);
         }
+
+        public IActionResult Delete (int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var especialidad = _context.Especialidad.FirstOrDefault(e => e.PubIntIdEspecialidad == id);
+
+            if (especialidad == null)
+            {
+                return NotFound();
+            }
+
+            return View();
+        }
+
+        [HttpPost] //Metodo Eliminar encargado del proceso POST al formulario BD
+        public IActionResult Delete (int id)
+        {
+            var especialidad = _context.Especialidad.Find(id);
+            _context.Especialidad.Remove(especialidad);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

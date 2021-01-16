@@ -16,6 +16,7 @@
                     <td>@Html.DisplayFor(ModelItem => item.PubStrDescripcion)</td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.PubIntIdEspecialidad">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.PubIntIdEspecialidad">Eliminar</a>
                     </td>
                 </tr>
             }

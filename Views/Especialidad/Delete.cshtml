@@ -1,0 +1,21 @@
+@model Control_Medico_NS.Models.Especialidad
+
+<h3>¿Desea aliminar el registro?</h3>
+
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(modelo => modelo.PubStrDescripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.PubStrDescripcion)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PubIntIdEspecialidad"/>
+        <input type="submit" value="Eliminar"/>
+    </form>
+    <div>
+        <a asp-action="Index">Atrás</a>
+    </div>
+</div>

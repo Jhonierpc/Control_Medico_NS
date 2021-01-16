@@ -14392,6 +14392,11 @@
   "RootNamespace": "Control_Medico_NS",
   "Documents": [
     {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Especialidad\\Delete.cshtml",
+      "TargetPath": "Views\\Especialidad\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

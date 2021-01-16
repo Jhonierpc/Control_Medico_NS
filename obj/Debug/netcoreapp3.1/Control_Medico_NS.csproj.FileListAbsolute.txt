@@ -68,3 +68,4 @@ C:\Desarrollo\GitHub\Control_Medico_NS\bin\Debug\netcoreapp3.1\runtimes\win\lib\
 C:\Desarrollo\GitHub\Control_Medico_NS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Index.cshtml.g.cs
 C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Edit.cshtml.g.cs
+C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Delete.cshtml.g.cs
