@@ -1,8 +1,54 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+    <br>
+    <br>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image center orange darken-2">
+                    <i class="material-icons medium white-text">medical_services</i>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red" asp-controller="Especialidad" asp-action="Create"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Especialidades</span>
+                    <p>Crear, modificar y eliminar especialidades.</p>
+                </div>
+                <div class="card-action blue-grey darken-3">
+                    <a asp-controller="Especialidad" asp-action="Index">Ver más</a>
+                </div>
+            </div>
+        </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image center blue darken-2">
+                    <i class="material-icons medium white-text">psychology</i>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red" asp-controller="Doctor" asp-action="Create"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Doctores</span>
+                    <p>Crear, modificar y eliminar doctores.</p>
+                </div>
+                <div class="card-action blue-grey darken-3">
+                    <a asp-controller="Doctor" asp-action="Index">Ver más</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image center green darken-2">
+                    <i class="material-icons medium white-text">face</i>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red" asp-controller="Paciente" asp-action="Create"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">Pacientes</span>
+                    <p>Crear, modificar y eliminar pacientes.</p>
+                </div>
+                <div class="card-action blue-grey darken-3">
+                    <a asp-controller="Paciente" asp-action="Index">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>

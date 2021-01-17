@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Control_Medico_NS.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -82,8 +83,22 @@ namespace Control_Medico_NS.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Update(paciente);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    _context.Update(paciente);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!PacienteExists(paciente.PubIntIdPaciente))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 return RedirectToAction(nameof(Index));
             }
 
@@ -115,6 +130,11 @@ namespace Control_Medico_NS.Controllers
             _context.Paciente.Remove(paciente);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool PacienteExists(int id)
+        {
+            return _context.Paciente.Any(e => e.PubIntIdPaciente == id);
         }
     }
 }

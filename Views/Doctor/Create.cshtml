@@ -1,0 +1,57 @@
+@model Control_Medico_NS.Models.Doctor
+
+<h4>Doctores</h4>
+
+<div class="row">
+    <form class="col s12" asp-action="Create">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input asp-for="PubStrNombre" type="text" class="validate">
+                <label asp-for="PubStrNombre">Nombre completo: </label>
+                <span asp-validation-for="PubStrNombre"></span>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">card_membership</i>
+                <input asp-for="PubStrCredencial" type="text" class="validate">
+                <label asp-for="PubStrCredencial">No. Credencial: </label>
+                <span asp-validation-for="PubStrCredencial"></span>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">local_hospital</i>
+                <input asp-for="PubStrHospital" type="text" class="validate">
+                <label asp-for="PubStrHospital">Hospital: </label>
+                <span asp-validation-for="PubStrHospital"></span>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input asp-for="PubStrTelefono" type="text" class="validate">
+                <label asp-for="PubStrTelefono">Teléfono: </label>
+                <span asp-validation-for="PubStrTelefono"></span>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">local_post_office</i>
+                <input asp-for="PubStrEmail" type="text" class="validate">
+                <label asp-for="PubStrEmail">Email: </label>
+                <span asp-validation-for="PubStrEmail"></span>
+            </div>
+        </div>
+        
+        <div class="input-field col s12">
+            <i class="material-icons prefix">medical_services</i>
+            <select name="PubIntIdEspecialidad" asp-items="ViewBag.ListaEspecialidades"></select>
+        </div>
+        <div class="row">
+            <div class="col s6 m6">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            <div class="col s6 m6">
+                <a class="waves-effect waves-light btn" asp-action="Index"><i class="material-icons left">undo</i>Atrás</a>
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -12,6 +12,8 @@ namespace Control_Medico_NS.Models
         public DbSet<Especialidad> Especialidad { get; set; }
         
         public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<DoctorEspecialidad> DoctorEspecialidad { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,6 +58,43 @@ namespace Control_Medico_NS.Models
                     .IsUnicode(false);
             }
             );
+
+            modelBuilder.Entity<Doctor>(entidad =>
+            {
+                entidad.ToTable("Doctor");
+                entidad.HasKey(d => d.PubIntIdDoctor);
+                entidad.Property(d => d.PubStrNombre)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entidad.Property(d => d.PubStrCredencial)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entidad.Property(d => d.PubStrHospital)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+                entidad.Property(d => d.PubStrTelefono)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+                entidad.Property(d => d.PubStrEmail)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            }
+            );
+
+            modelBuilder.Entity<DoctorEspecialidad>().HasKey(x => new {x.PubIntIdDoctor, x.PubIntIdEspecialidad});
+
+            modelBuilder.Entity<DoctorEspecialidad>().HasOne(x => x.Doctor)
+                .WithMany(p => p.DoctorEspecialidad)
+                .HasForeignKey(p => p.PubIntIdDoctor);
+
+            modelBuilder.Entity<DoctorEspecialidad>().HasOne(x => x.Especialidad)
+                .WithMany(p => p.DoctorEspecialidad)
+                .HasForeignKey(p => p.PubIntIdEspecialidad);
         }
     }
 }

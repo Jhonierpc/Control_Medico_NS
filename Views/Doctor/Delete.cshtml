@@ -1,0 +1,35 @@
+@model Control_Medico_NS.Models.Doctor
+
+<h4>¿Desea aliminar el registro del doctor?</h4>
+
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card hoverable blue-grey darken-5">
+            <div class="card-content white-text">
+                <span class="card-title"><b>@Html.DisplayFor(modelo => modelo.PubStrNombre)</b></span>
+                <dt>
+                    @Html.DisplayName("No. Credencial") : @Html.DisplayFor(modelo => modelo.PubStrCredencial)
+                </dt>
+                <hr/>
+                <dt>
+                    @Html.DisplayName("Hospital") : @Html.DisplayFor(modelo => modelo.PubStrHospital)
+                </dt>
+                <hr/>
+                <dt>
+                    @Html.DisplayName("Teléfono") : @Html.DisplayFor(modelo => modelo.PubStrTelefono)
+                </dt>
+                <hr/>
+                <dt>
+                    @Html.DisplayName("Email") : @Html.DisplayFor(modelo => modelo.PubStrEmail)
+                </dt>
+            </div>
+            <div class="card-action blue-grey darken-3">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="PubIntIdDoctor"/>
+                    <input type="submit" value="Eliminar" class="waves-effect waves-light btn-small orange darken-2"/>
+                    <a asp-action="Index" class="right">Atrás</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

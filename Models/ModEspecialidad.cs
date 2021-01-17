@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Control_Medico_NS.Models
@@ -7,6 +8,7 @@ namespace Control_Medico_NS.Models
         [Key] //Especificación de llave primaria
         public int PubIntIdEspecialidad {get; set;}
         public string PubStrDescripcion {get; set;}
+        public List<DoctorEspecialidad> DoctorEspecialidad { get; set; }
         
     }
 }

@@ -18,6 +18,63 @@ namespace Control_Medico_NS.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Control_Medico_NS.Models.Doctor", b =>
+                {
+                    b.Property<int>("PubIntIdDoctor")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("PubStrCredencial")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("PubStrEmail")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100)
+                        .IsUnicode(false);
+
+                    b.Property<string>("PubStrHospital")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("PubStrNombre")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false);
+
+                    b.Property<string>("PubStrTelefono")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)")
+                        .HasMaxLength(20)
+                        .IsUnicode(false);
+
+                    b.HasKey("PubIntIdDoctor");
+
+                    b.ToTable("Doctor");
+                });
+
+            modelBuilder.Entity("Control_Medico_NS.Models.DoctorEspecialidad", b =>
+                {
+                    b.Property<int>("PubIntIdDoctor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PubIntIdEspecialidad")
+                        .HasColumnType("int");
+
+                    b.HasKey("PubIntIdDoctor", "PubIntIdEspecialidad");
+
+                    b.HasIndex("PubIntIdEspecialidad");
+
+                    b.ToTable("DoctorEspecialidad");
+                });
+
             modelBuilder.Entity("Control_Medico_NS.Models.Especialidad", b =>
                 {
                     b.Property<int>("PubIntIdEspecialidad")
@@ -82,6 +139,21 @@ namespace Control_Medico_NS.Migrations
                     b.HasKey("PubIntIdPaciente");
 
                     b.ToTable("Paciente");
+                });
+
+            modelBuilder.Entity("Control_Medico_NS.Models.DoctorEspecialidad", b =>
+                {
+                    b.HasOne("Control_Medico_NS.Models.Doctor", "Doctor")
+                        .WithMany("DoctorEspecialidad")
+                        .HasForeignKey("PubIntIdDoctor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Control_Medico_NS.Models.Especialidad", "Especialidad")
+                        .WithMany("DoctorEspecialidad")
+                        .HasForeignKey("PubIntIdEspecialidad")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

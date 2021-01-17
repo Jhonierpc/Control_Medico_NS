@@ -1,0 +1,55 @@
+@model IEnumerable<Control_Medico_NS.Models.Doctor>
+
+    <p>
+        <a asp-action="Create" class="btn-floating btn-large blue-grey darken-3"><i class="material-icons">person_add</i></a>
+    </p>
+
+    <table class="responsive-table highlight z-depth-3">
+        <thead class="blue darken-2 white-text">
+            <tr>
+                <th>
+                    @Html.DisplayName("Nombre")
+                </th>
+                <th>
+                    @Html.DisplayName("No. Credencial")
+                </th>
+                <th>
+                    @Html.DisplayName("Hospital")
+                </th>
+                <th>
+                    @Html.DisplayName("Teléfono")
+                </th>
+                <th>
+                    @Html.DisplayName("Email")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrCredencial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrHospital)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrTelefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrEmail)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PubIntIdDoctor"><i class="material-icons blue-grey-text">edit</i></a>
+                        <a asp-action="Details" asp-route-id="@item.PubIntIdDoctor"><i class="material-icons blue-grey-text">more_vert</i></a>
+                        <a asp-action="Delete" asp-route-id="@item.PubIntIdDoctor"><i class="material-icons red-text">delete</i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
