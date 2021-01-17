@@ -70,3 +70,8 @@ C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Espec
 C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Edit.cshtml.g.cs
 C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Delete.cshtml.g.cs
 C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Create.cshtml.g.cs
+C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Index.cshtml.g.cs
+C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Create.cshtml.g.cs
+C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Details.cshtml.g.cs
+C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Edit.cshtml.g.cs
+C:\Desarrollo\GitHub\Control_Medico_NS\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Delete.cshtml.g.cs

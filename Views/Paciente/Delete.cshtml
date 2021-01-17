@@ -1,0 +1,52 @@
+@model Control_Medico_NS.Models.Paciente
+
+<h3>¿Desea aliminar el registro del paciente?</h3>
+
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayName("Nombre")
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.PubStrNombre)
+        </dd>
+        <dt>
+            @Html.DisplayName("Seguro social")
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.PubStrSeguro)
+        </dd>
+        <dt>
+            @Html.DisplayName("Código postal")
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.PubStrCodigoPostal)
+        </dd>
+        <dt>
+            @Html.DisplayName("Teléfono")
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.PubStrTelefono)
+        </dd>
+        <dt>
+            @Html.DisplayName("Dirección")
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.PubStrDireccion)
+        </dd>
+        <dt>
+            @Html.DisplayName("Email")
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.PubStrEmail)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PubIntIdPaciente"/>
+        <input type="submit" value="Eliminar"/>
+    </form>
+    <div>
+        <a asp-action="Index">Atrás</a>
+    </div>
+</div>
+

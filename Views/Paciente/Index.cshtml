@@ -1,0 +1,61 @@
+@model IEnumerable<Control_Medico_NS.Models.Paciente>
+
+    <p>
+        <a asp-action="Create">Nuevo</a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Nombre")
+                </th>
+                <th>
+                    @Html.DisplayName("Seguro social")
+                </th>
+                <th>
+                    @Html.DisplayName("Código postal")
+                </th>
+                <th>
+                    @Html.DisplayName("Teléfono")
+                </th>
+                <th>
+                    @Html.DisplayName("Dirección")
+                </th>
+                <th>
+                    @Html.DisplayName("Email")
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrSeguro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrCodigoPostal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrTelefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrDireccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modeloItem => item.PubStrEmail)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PubIntIdPaciente">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.PubIntIdPaciente">Consultar</a>
+                        <a asp-action="Delete" asp-route-id="@item.PubIntIdPaciente">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

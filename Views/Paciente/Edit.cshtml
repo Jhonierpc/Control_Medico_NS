@@ -1,0 +1,49 @@
+@model Control_Medico_NS.Models.Paciente
+
+<h3>Paciente</h3>
+
+<div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="PubIntIdPaciente"/>
+        
+        <div>
+            <label asp-for="PubStrNombre">Nombre completo: </label>
+            <input asp-for="PubStrNombre"/>
+            <span asp-validation-for="PubStrNombre"></span>
+        </div>
+        <div>
+            <label asp-for="PubStrSeguro">Seguro social: </label>
+            <input asp-for="PubStrSeguro"/>
+            <span asp-validation-for="PubStrSeguro"></span>
+        </div>
+        <div>
+            <label asp-for="PubStrCodigoPostal">Código postal: </label>
+            <input asp-for="PubStrCodigoPostal"/>
+            <span asp-validation-for="PubStrCodigoPostal"></span>
+        </div>
+        <div>
+            <label asp-for="PubStrTelefono">Teléfono: </label>
+            <input asp-for="PubStrTelefono"/>
+            <span asp-validation-for="PubStrTelefono"></span>
+        </div>
+        <div>
+            <label asp-for="PubStrDireccion">Dirección: </label>
+            <input asp-for="PubStrDireccion"/>
+            <span asp-validation-for="PubStrDireccion"></span>
+        </div>
+        <div>
+            <label asp-for="PubStrEmail">Email: </label>
+            <input asp-for="PubStrEmail"/>
+            <span asp-validation-for="PubStrEmail"></span>
+        </div>
+
+        <div>
+            <input type="submit" value="Guardar"/>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Atrás</a>
+</div>

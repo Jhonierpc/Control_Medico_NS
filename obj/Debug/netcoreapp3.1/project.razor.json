@@ -14392,6 +14392,11 @@
   "RootNamespace": "Control_Medico_NS",
   "Documents": [
     {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Paciente\\Edit.cshtml",
+      "TargetPath": "Views\\Paciente\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Especialidad\\Delete.cshtml",
       "TargetPath": "Views\\Especialidad\\Delete.cshtml",
       "FileKind": "mvc"
@@ -14432,8 +14437,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Paciente\\Index.cshtml",
+      "TargetPath": "Views\\Paciente\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Paciente\\Details.cshtml",
+      "TargetPath": "Views\\Paciente\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14442,8 +14457,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Paciente\\Create.cshtml",
+      "TargetPath": "Views\\Paciente\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Desarrollo\\GitHub\\Control_Medico_NS\\Views\\Paciente\\Delete.cshtml",
+      "TargetPath": "Views\\Paciente\\Delete.cshtml",
       "FileKind": "mvc"
     }
   ],

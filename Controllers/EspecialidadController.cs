@@ -94,7 +94,7 @@ namespace Control_Medico_NS.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View();
+            return View(especialidad);
         }
     }
 }
